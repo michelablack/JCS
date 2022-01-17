@@ -16,17 +16,21 @@ public class JCSRemovalSimpleConcurrentTest {
 	private int count;
 	private String expectedResult;
 	private static JCS jcs;
-	
+
 	@BeforeClass
-	public static void configureEnvironment() throws Exception {
+	public static void setUp() throws Exception {
 		JCS.setConfigFilename("/TestRemoval.ccf");
 		jcs = JCS.getInstance( "testCache1" );
 	}
-	
-    public JCSRemovalSimpleConcurrentTest(int count, String expectedResult) {
-    	this.count = count;
-    	this.expectedResult = expectedResult;
-    }
+
+	public JCSRemovalSimpleConcurrentTest(int count, String expectedResult) {
+		this.configure(count, expectedResult);
+	}
+
+	public void configure(int count, String expectedResult){
+		this.count = count;
+		this.expectedResult = expectedResult;
+	}
     
     @Parameters
 	public static Collection<Object[]> getParameters() {

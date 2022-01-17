@@ -17,14 +17,18 @@ public class JCSLightLoadUnitTest {
 	private int items;
 	private String expectedResult;
 	private static JCS jcs;
-	
+
 	@BeforeClass
-	public static void configureEnvironment() throws Exception {
+	public static void setUp() throws Exception {
 		JCS.setConfigFilename("/TestSimpleLoad.ccf");
 		jcs = JCS.getInstance( "testCache1" );
 	}
-	
+
 	public JCSLightLoadUnitTest(int items, String expectedResult) {
+		this.configure(items, expectedResult);
+	}
+
+	public void configure(int items, String expectedResult){
 		this.items = items;
 		this.expectedResult = expectedResult;
 	}
