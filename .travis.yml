@@ -1,0 +1,14 @@
+language: java
+
+notifications:
+ email: false
+
+addons:
+  sonarcloud:
+    organization: "michelablack"
+    token:
+       secure: "LIhHnUKa2EH6YtKrfE2K6Z71SaSwMNv9yj+cEihzwKJsTbNibiiuIO/IgrdWwJgtC8iDudybT6q9arANdjbwB459kx7abYjsZF6H7IwInDN9f+vjl9W1xb6f5Qe4ReMpoYW7pbn6S82WlF28Ogg72jkodO7uucN1W2YR5p33GodTAXPUGZlQq/hnFANKyFzZb1LTpk+9vOLJZlBrsetWmBWSvQiuoQ7R5GTHFWsu12tDTHS6mlTcyrz2z0hhsA9Gxx4QYJiO0Fbc1CFb3PmNVt4K44LrQ3H8V90mqh7MAQet0B7gMhI8QV1KfTqwM9BLHQ4U18X9wR8+KxUFAmn6D+ZI/uC/P/8AGkQhKy8tHqqM14+D1iiEgA4+0WINFSDEUa/m6XcQ3eAIqHYxIG/SlYHzKw6TObx2NuaB/ntqYjGqbpiO1YW0OAuApZGA2TDU6eJ2gFOqBfCI/61VyWuQupbtPElpymPB0rqE/LZiU+3AbQ7tfst9/Bvu5z/Yz7Pp9iOFyMCS0iWZcWJG4yKmMS0jlutHhA23XGCdvmCtnCdtOTdMU6YLZHT5LUAGzSUL2zBD5PA1thcmbv2d+QflYAdJvUndldOcwaplch7XpV9rV9QAk7APtOXJ+qAvA0PqETi+wO8hAvndQ37A+o6J+LpHEqLzuxqHaAFWOg4A174="
+
+script:  
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn test -Dcoverage=true sonar:sonar -Dsonar.projectKey=michelablack_JCS
