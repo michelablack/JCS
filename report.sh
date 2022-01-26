@@ -1,6 +1,6 @@
 PATH_JACOCO_CLI_JAR="src/test/lib"
 PATH_JCS_SRC="src"
-PATH_JCS_JAR="src/test/lib"
+PATH_JCS_JAR="target/dependency"
 PATH_JCS_FAT_JAR="src/test/lib/fat"
 
 ## CREAZIONE CON JACOCO DA CLI DEL FAT-JAR INSTUMENTATO:

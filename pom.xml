@@ -7,16 +7,13 @@
     <version>1.3</version>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.uniroma2.isw2</groupId>
-    <artifactId>JCS-Test</artifactId>
+    <groupId>it.uniroma2.dicii.isw2.jcs.paramTests</groupId>
+    <artifactId>JCS</artifactId>
     <profiles>
         <profile>
             <id>coverageProfile</id>
             <activation>
-                <property>
-                    <name>coverage</name>  <!-- use as: mvn <goals> -Dcoverage=true -->
-                    <value>true</value>
-                </property>
+                <activeByDefault>true</activeByDefault>
             </activation>
             <dependencies>
                 <dependency>
